@@ -4,10 +4,34 @@
  */
 package com.mycompany.sistemaautobuses.controlador;
 
-/**
- *
- * @author Familiar
- */
+import dao.CiudadDAO;
+import modelo.Ciudad;
+import java.util.List;
+
 public class CiudadController {
+    private CiudadDAO ciudadDAO;
     
+    public CiudadController() {
+        ciudadDAO = new CiudadDAO();
+    }
+    
+    public boolean insertarCiudad(Ciudad ciudad) {
+        return ciudadDAO.insertarCiudad(ciudad);
+    }
+    
+    public List<Ciudad> obtenerTodasCiudades() {
+        return ciudadDAO.obtenerTodasCiudades();
+    }
+    
+    public Ciudad obtenerCiudadPorId(int id) {
+        return ciudadDAO.obtenerCiudadPorId(id);
+    }
+    
+    public boolean actualizarCiudad(Ciudad ciudad) {
+        return ciudadDAO.actualizarCiudad(ciudad);
+    }
+    
+    public boolean eliminarCiudad(int id) {
+        return ciudadDAO.eliminarCiudad(id);
+    }
 }
