@@ -4,10 +4,38 @@
  */
 package com.mycompany.sistemaautobuses.controlador;
 
-/**
- *
- * @author Familiar
- */
+import dao.PasajeroDAO;
+import modelo.Pasajero;
+import java.util.List;
+
 public class PasajeroController {
+    private PasajeroDAO pasajeroDAO;
     
+    public PasajeroController() {
+        pasajeroDAO = new PasajeroDAO();
+    }
+    
+    public boolean insertarPasajero(Pasajero pasajero) {
+        return pasajeroDAO.insertarPasajero(pasajero);
+    }
+    
+    public List<Pasajero> obtenerTodosPasajeros() {
+        return pasajeroDAO.obtenerTodosPasajeros();
+    }
+    
+    public Pasajero obtenerPasajeroPorId(int id) {
+        return pasajeroDAO.obtenerPasajeroPorId(id);
+    }
+    
+    public boolean actualizarPasajero(Pasajero pasajero) {
+        return pasajeroDAO.actualizarPasajero(pasajero);
+    }
+    
+    public boolean eliminarPasajero(int id) {
+        return pasajeroDAO.eliminarPasajero(id);
+    }
+    
+    public List<Pasajero> buscarPasajeros(String criterio) {
+        return pasajeroDAO.buscarPasajeros(criterio);
+    }
 }
